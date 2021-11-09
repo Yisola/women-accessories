@@ -1,0 +1,42 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(14,14,14,1.00);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+  }
+
+  .carousel-caption {
+    top: 250px;
+}
+
+.carousel-img {
+    object-fit: cover;
+    height: 550px;
+}
+
+.bg-orange {
+    background-color: #f0644f;
+    color: aliceblue;
+    font-weight: 600;
+    text-align: center;
+}
+
+.m-right {
+    border: 2px solid #f0644f;
+    border-right: 2px solid white;
+}
+
+.underline {
+    width: 100px;
+    height: 2px;
+    background-color: orangered;
+}
