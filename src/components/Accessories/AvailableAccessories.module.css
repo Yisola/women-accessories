@@ -1,0 +1,19 @@
+.underline {
+    width: 100px;
+    height: 2px;
+    background-color: orangered;
+}
+
+.bg-light-gray {
+    background-color: rgba(111,111,111,0.09);
+}
+
+.kit-img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.media img {
+    max-width: 120px;
+    height: auto;
+}

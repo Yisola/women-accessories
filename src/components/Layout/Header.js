@@ -7,7 +7,7 @@ const Header = props => {
         <div>
             <header className={classes.header}>
                 <h3>Women Accessories Store</h3>
-                <HeaderCartButton />
+                <HeaderCartButton onClick={props.onShowCart} />
             </header>
 
             <Carousel>
@@ -40,8 +40,8 @@ const Header = props => {
                 <div className="container">
                     <div className="row">
                         <div className={`col-md-4 ${classes['m-right']}`}>
-                            <h4>FREE SHIPPING</h4>
-                            <p>on order over $90</p>
+                            <h4>FREE DELIVERY</h4>
+                            <p>on order over #40,000</p>
                         </div>
                         <div className={`col-md-4 ${classes['m-right']}`}>
                             <h4>CALL US AT ANYTIME</h4>
