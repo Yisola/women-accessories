@@ -1,6 +1,7 @@
-// import React from 'react';
+import { useContext } from 'react';
 import AccessoriesItemForm from './AccessoriesItem/AccessoriesItemForm';
 import classes from './AvailableAccessories.module.css';
+import CartContext from '../../store/cart-context';
 
 
 
@@ -32,7 +33,16 @@ const DUMMY_ACCESSORIES = [
 ]
 
 const AvailableAccessories = () => {
-    //   const accessoriesList = DUMMY_ACCESSORIES.map(accessory => <li>{accessory.brand}</li>);
+    const cartCtx = useContext(CartContext);
+
+    const addToCartHandler = (amount, item) => {
+      cartCtx.addItem({
+          id: item.id,
+          brand: item.brand,
+          amount: amount,
+          price: item.price
+      });
+    };
 
     return (
         <section className={`container-fluid ${classes['bg-light-gray']}`}>
@@ -44,26 +54,27 @@ const AvailableAccessories = () => {
             </div>
 
 
-
-                <div className="container mt-5">
-                    <div className="row">
+            <div className="container mt-5">
+                <div className="row">
                     {DUMMY_ACCESSORIES.map((d) => (
                         <div className=" col-md-3">
                             <div className="card">
                                 <img src={d.img} alt="" className={`card-img-top ${classes['kit-img']}`} />
                                 <div className="card-body text-center">
                                     <h5>{d.brand}</h5>
-                                    <h5>{d.price}</h5>
+                                    <h5>₦{d.price.toFixed(2)}</h5>
                                     {/* <button class="btn btn-danger"><MdOutlineShoppingCart /> Add To Cart</button> */}
-                                    <AccessoriesItemForm />
+                                    <AccessoriesItemForm onAddToCart={addToCartHandler} item={d}/>
                                     
+
+
                                 </div>
                             </div>
                         </div>
-                         ))}
-                    </div>
+                    ))}
                 </div>
-           
+            </div>
+
 
         </section>
     )

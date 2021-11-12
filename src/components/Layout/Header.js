@@ -41,7 +41,7 @@ const Header = props => {
                     <div className="row">
                         <div className={`col-md-4 ${classes['m-right']}`}>
                             <h4>FREE DELIVERY</h4>
-                            <p>on order over #40,000</p>
+                            <p>on order over ₦40,000</p>
                         </div>
                         <div className={`col-md-4 ${classes['m-right']}`}>
                             <h4>CALL US AT ANYTIME</h4>

@@ -1,22 +1,55 @@
+import { useContext } from 'react';
+
 import Modal from '../UI/Modal';
+import CartItem from './CartItem';
 import classes from './Cart.module.css';
+import CartContext from '../../store/cart-context';
 
 const Cart = props => {
-    const cartItems = <ul className={classes['cart-items']}>{[
-        {id: 'c1', brand: 'Diwura hair', price: 3000},
-    ].map((item) => <li>{item.brand}</li>)}</ul>
+    const cartCtx = useContext(CartContext);
+
+    const totalAmount = `₦${cartCtx.totalAmount.toFixed(2)}`;
+    // console.log("total amount: " + totalAmount);
+
+    const hasItems = cartCtx.items.length > 0;
+
+    const cartItemRemoveHandler = (id) => { 
+        cartCtx.removeItem(id);
+    };
+
+    const cartItemAddHandler = (item) => { 
+        cartCtx.addItem({ ...item, amount: 1});
+    };
+
+    const cartItems = (
+        <ul className={classes['cart-items']}>
+            {cartCtx.items.map((item) => (
+                <CartItem
+                    key={item.id}
+                    brand={item.brand}
+                    amount={item.amount}
+                    price={item.price}
+                    // bind preconfigures a function for future execution. basically it allows
+                    // me preconfigure the argument the function (cartItemRemoveHandler and cartItemAddHandler) will receive when it is executed
+                    //so the two functions receive id and item respectively
+                    onRemove={cartItemRemoveHandler.bind(null, item.id)}
+                    onAdd={cartItemAddHandler.bind(null, item)}
+                />
+            ))}
+        </ul>
+    );
 
     return (
         <Modal onClose={props.onClose}>
-          {cartItems}
-          <div className={classes.total}>
-              <span>Total Amount</span>
-              <span>4000</span>
-          </div>
-          <div className={classes.actions}>
-              <button className={classes['button--alt']} onClick={props.onClose}>Close</button>
-              <button className={classes.button}>Order</button>
-          </div>
+            {cartItems}
+            <div className={classes.total}>
+                <span>Total Amount</span>
+                <span>{totalAmount}</span>
+            </div>
+            <div className={classes.actions}>
+                <button className={classes['button--alt']} onClick={props.onClose}>Close</button>
+                {hasItems && <button className={classes.button}>Order</button>}
+            </div>
         </Modal>
     )
 };
