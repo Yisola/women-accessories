@@ -7,7 +7,7 @@ const AccessoriesItemForm = props => {
   const submitHandler = event => {
     event.preventDefault();
 
-    props.onAddToCart( 1, props.item);
+    props.onAddToCart(1, props.item);
   };
 
   return (

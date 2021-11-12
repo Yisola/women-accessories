@@ -36,12 +36,12 @@ const AvailableAccessories = () => {
     const cartCtx = useContext(CartContext);
 
     const addToCartHandler = (amount, item) => {
-      cartCtx.addItem({
-          id: item.id,
-          brand: item.brand,
-          amount: amount,
-          price: item.price
-      });
+        cartCtx.addItem({
+            id: item.id,
+            brand: item.brand,
+            amount: amount,
+            price: item.price
+        });
     };
 
     return (
@@ -64,8 +64,8 @@ const AvailableAccessories = () => {
                                     <h5>{d.brand}</h5>
                                     <h5>₦{d.price.toFixed(2)}</h5>
                                     {/* <button class="btn btn-danger"><MdOutlineShoppingCart /> Add To Cart</button> */}
-                                    <AccessoriesItemForm onAddToCart={addToCartHandler} item={d}/>
-                                    
+                                    <AccessoriesItemForm onAddToCart={addToCartHandler} item={d} />
+
 
 
                                 </div>
