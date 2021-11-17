@@ -16,7 +16,7 @@ const DUMMY_ACCESSORIES = [
         id: '2',
         brand: 'Beckly Cols',
         price: 23000,
-        img: 'https://cdn.cliqueinc.com/posts/219651/best-black-heels-219651-1552255101727-product.700x0c.jpg'
+        img: 'https://images-na.ssl-images-amazon.com/images/I/71nX0Ac3zrL._SL1000_.jpg'
     },
     {
         id: '3',
