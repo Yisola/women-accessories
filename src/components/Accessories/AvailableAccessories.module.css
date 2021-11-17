@@ -1,7 +1,8 @@
 .underline {
     width: 100px;
     height: 2px;
-    background-color: orangered;
+    /* background-color: orangered; */
+    background-color: #00AD7C;
 }
 
 .bg-light-gray {

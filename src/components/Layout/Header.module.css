@@ -25,14 +25,14 @@
 }
 
 .bg-orange {
-    background-color: #f0644f;
+    background-color: #dc3545;
     color: aliceblue;
     font-weight: 600;
     text-align: center;
 }
 
 .m-right {
-    border: 2px solid #f0644f;
+    /* border: 2px solid #f0644f; */
     border-right: 2px solid white;
 }
 
